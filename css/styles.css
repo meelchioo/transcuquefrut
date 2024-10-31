@@ -30,7 +30,7 @@ header {
 header h1 {
     font-size: 3.5rem; 
     font-weight: 800; 
-    font-family: Arial Black, cursive, sans-serif; 
+    font-family: Arial, sans-serif;
     color: #b2cdff; 
     margin: 0;
     text-shadow: 2px 2px #333333; /* ombra per destacar */
