@@ -1,0 +1,461 @@
+/* Estilos básicos de la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encapçalament */
+header {
+    background-color: #006aff;
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+
+/* Estil del títol principal */
+header h1 {
+    font-size: 3.5rem; 
+    font-weight: 800; 
+    font-family: 'Arial Black', cursive, sans-serif; 
+    color: #b2cdff; 
+    margin: 0;
+    text-shadow: 2px 2px #333333; /* ombra per destacar */
+}
+
+/* Estil dels enllaços del menú */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5em;
+}
+
+nav a {
+    color: #b2cdff; 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    text-decoration: none;
+    padding: 0.5em;
+    transition: color 0.3s, background-color 0.3s; /* transició de color */
+}
+
+nav a:hover {
+    color: #fff; /* canvia de color al passar el mouse */
+    background-color: rgba(255, 255, 255, 0.1); /* fons semitransparent */
+}
+
+
+/* Contenidor principal */
+.container {
+    display: flex;
+    flex: 1;
+    padding: 1em;
+}
+
+.imagen-centrada {
+    display: block;
+    margin: 0 auto;
+   padding-top: 0;
+}
+
+
+/* Zona lateral */
+aside {
+    background-color: #b2cdff;
+    padding: 1em;
+    width: 25%;
+}
+aside img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+/* Mapa responsive */
+aside iframe {
+    width: 100%; /* ocupa el 100% del contenidor */
+    max-width: 290px; /* ample màxim per les pantallas grans */
+    height: auto; /* manté la relació d'aspecte */
+}
+
+
+/* Cos principal */
+main {
+    flex: 1;
+    padding: 1em;
+}
+.gallery {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+.gallery-img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+.infografia {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1em;
+    border-radius: 8px;
+}
+
+#p5Canvas {
+    width: 50%;
+    height: auto;
+    margin: 1em auto;
+    border: 1px solid #ddd;
+}
+
+/* Estils pel contenidor de 'Sobre nosaltres' */
+.about-container {
+    display: flex;
+    align-items: center;
+    max-inline-size: 800px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Justificar el text dins dels paràgrafs */
+.about-content p {
+    text-align: justify;
+}
+
+.about-image {
+    flex: 1; /* permet que la imatge ocupi la meitat del contenidor*/
+    max-width: 300px;
+    padding: 1rem;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+
+/* contenidor del formulari i el P5JS */
+.contacto-container {
+    display: flex;
+    align-items: flex-start; /* Alinea el canvas y el formulario en la parte superior */
+    gap: 1em; /* Espacio entre el formulario y el canvas */
+}
+
+/* Estilos para el formulario de contacto */
+.contact-form {
+    flex: 1;
+}
+
+#contacto {
+    margin-top: 50px; /* Cambia el valor según el espacio que desees */
+}
+
+/* tamany ajustat del canvas */
+#p5Canvas {
+    width: 200px; /* ample más pequeño para el canvas */
+    height: 200px;
+    border: 1px solid #ddd;
+}
+
+/* tamany fixe pel contenidor del canvas */
+#p5Canvas {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #dddddd00;
+}
+
+
+/* Peu de pàgina */
+footer {
+    position: relative; /* Permet que el footer estigui posicionat correctament */
+    background-color: #113cb3; /* Color de fons del footer */
+    color: white; /* Color del text */
+    text-align: center; /* Centra el text */
+    padding: 2em; /* Espai interior del footer */
+    width: 100%; /* Amplada del footer */
+    bottom: 0; /* Coloca el footer a la part inferior */
+}
+
+/* Opcional: Si vols que el footer estigui fix a la part inferior de la finestra del navegador */
+footer.fixed {
+    position: fixed; /* Posició fixa */
+    left: 0; /* Esquerra a 0 */
+    right: 0; /* Dreta a 0 */
+}
+
+
+
+/* Estil per als enllaços del footer */
+footer a {
+    color: #b2cdff; /* Color verd per als enllaços */
+    text-decoration: none; /* Treu el subratllat */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Subratlla l'enllaç al passar el ratolí */
+}
+.footer {
+    margin-top: 50px; /* Ajusta el valor según sea necesario */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    aside {
+        width: 100%;
+    }
+    .gallery-img {
+        max-width: 100px;
+    }
+}
+
+/* Estil del NetArt */
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .wave {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.5), transparent);
+    border-radius: 50%;
+    mix-blend-mode: overlay;
+    animation: move 5s ease-in-out infinite;
+  }
+  
+  .wave1 { background-color: rgb(255, 0, 0); animation-delay: 0s; }   
+  .wave2 { background-color: rgb(0, 255, 0); animation-delay: 1s; }   
+  .wave3 { background-color: rgb(0, 0, 255); animation-delay: 2s; }  
+
+  @keyframes move {
+    0%, 100% { transform: translate(-25%, -25%) scale(1.1); }
+    50% { transform: translate(25%, 25%) scale(1.2); }
+  }
+  
+  .wave-container:hover .wave {
+    animation: changeColor 3s ease-in-out infinite;
+  }
+  
+  @keyframes changeColor {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+
+
+
+/* Contenedor de productos */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    padding: 20px;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: calc(100% / 2 - 40px); /* Dos tarjetas por fila en pantallas más grandes */
+    max-width: 300px; /* Ancho máximo para tarjetas */
+    transition: transform 0.3s; /* Transición suave al pasar el mouse */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .product-card {
+        width: calc(100% - 40px); /* Una tarjeta por fila en pantallas pequeñas */
+    }
+}
+
+/*Intrinsic Design*/
+/* Contenidor principal amb barra lateral */
+.about-container {
+    display: flex;
+    max-inline-size: 700px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra decorativa al costat esquerre */
+.about-deco-bar {
+    background-color: #3498db; /* Color de la barra lateral */
+    inline-size: 8px;
+    block-size: auto; /* Permet que s'adapti a l'altura del contenidor */
+}
+
+/* Contingut principal */
+.about-content {
+    padding: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Títol amb mida fluida */
+.about-content h1 {
+    font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem);
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+}
+
+/* Text amb ajust fluid */
+.about-content p {
+    margin: 0.5rem 0;
+    color: #4a4a4a;
+    font-size: clamp(0.95rem, 1vw + 0.5rem, 1.1rem);
+}
+
+/* Ajust de separació segons amplada */
+@media (min-width: 500px) {
+    .about-content {
+        padding: 3rem;
+    }
+}
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #113cb3;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Estilo uniforme para todos los h2 */
+h2 {
+    font-family: 'Arial Black', sans-serif; /* Fuente Arial Black */
+    font-size: 2rem; /* Ajuste de tamaño */
+    font-weight: bold; /* Negrita */
+    margin: 0.5em 0; /* Espaciado arriba y abajo */
+    color: #0047ab; /* Color oscuro */
+}
+
+.nacional {
+    color: #113cb3; /* Color para "Transport a nivell nacional" */
+    
+}
+
+.internacional {
+    color: #113cb3; /* Color para "Transport a nivell internacional" */
+}
+
+.rapid {
+    color: #113cb3; /* Color para "Transport ràpid" */
+}
+
+.alquiler {
+    color: #113cb3; /* Color para "Alquiler dels nostres camions" */
+}
+
+/* Titol del sobre nosaltres*/
+.titulo-enmarcado {
+
+    border: 4px solid #113cb3; /* Cambia el color y grosor del borde según sea necesario */
+    padding: 10px; /* Espacio entre el texto y el borde */
+    background-color: #113cb3; /* Opcional: color de fondo del rectángulo */
+    display:; /* Para que el borde se ajuste al tamaño del texto */
+    color: #b2cdff; /* Cambia el color del texto */
+}
+
+/* Estil pel títol de la zona lateral */
+aside h2 {
+    color: #113cb3;
+}
+
+/* Ajuste adicional para pantallas pequeñas */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem; /* Ajuste de tamaño en pantallas pequeñas */
+    }
+
+    nav a {
+        font-size: 1rem; /* Ajuste de tamaño en pantallas pequeñas */
+    }
+}
+@media (max-width: 768px) {
+    aside iframe {
+        max-width: 100%; /* Asegura que el mapa ocupe el ancho completo en pantallas pequeñas */
+        height: auto; /* Ajusta la altura para mantener la relación de aspecto */
+    }
+}
+
+/* Ajuste responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Coloca imagen y texto en columnas */
+    }
+    .about-image {
+        max-width: 100%; /* Ancho completo en pantallas pequeñas */
+        padding: 1rem 0;
+    }
+}
+
+/* Estilos para la barra de navegación */
+
+.navbar .navbar-nav .nav-link {
+    color: #113cb3; /* Color del texto */
+    font-weight: bold; /* Negrita para el texto */
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #ffffff; /* Cambia el color del texto al pasar el cursor */
+}
+
+.navbar .navbar-toggler {
+    border-color: #113cb3; /* Color del borde del botón de toggle */
+}
+
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23b2cdff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* Cambia el icono de toggle a un color específico */
+}
+
+/* Activo o elemento seleccionado */
+.navbar .navbar-nav .nav-link.active {
+    color: #113cb3; /* Color del texto para el elemento activo */
+}
+
+
